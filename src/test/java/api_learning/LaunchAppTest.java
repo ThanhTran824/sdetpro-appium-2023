@@ -7,7 +7,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
 
-public class Lesson_14 {
+public class LaunchAppTest {
 
     public static void main(String[] args) {
         // Send a request into appium server > ask to launch the app
@@ -25,7 +25,7 @@ public class Lesson_14 {
             URL appiumServer = new URL("http://localhost:4723/wd/hub");
             appiumDriver = new AndroidDriver<MobileElement>(appiumServer, desiredCapabilities);
 
-            Thread.sleep(10000);
+            Thread.sleep(3000);
 
         } catch (Exception e) {
             e.printStackTrace();
