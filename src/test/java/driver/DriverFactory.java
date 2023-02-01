@@ -35,8 +35,6 @@ public class DriverFactory implements MobileCapabilityTypeEx {
         if (appiumServer == null)
             throw new RuntimeException("Can't construct the appium server url @http://localhost:4723/wd/hub");
 
-
-
         switch (platform) {
             case ANDROID:
                 appiumDriver = new AndroidDriver<MobileElement>(appiumServer, desiredCapabilities);
@@ -46,8 +44,10 @@ public class DriverFactory implements MobileCapabilityTypeEx {
                 break;
         }
 
-        // Implicit wait | Interval time 500ms
-        appiumDriver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+        // Implicit wait
+        // default Interval time = 500ms
+        if (appiumDriver != null)
+            appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         return appiumDriver;
 
