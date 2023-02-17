@@ -1,0 +1,17 @@
+selector Strategies (appium.io)
+https://appium.io/docs/en/commands/element/find-elements/
+for resource-id, using MobileBy.id to android
+for accessibility, using MobileBy.AccessibilityId to android
+
+using appium inspector to inspect control 
+* best practice: should use accessibility id for find and interact element
++ implicit wait: wait for an appium session
++ explicit wait: only wait for a specific element
+
+// Explicit wait
+WebDriverWait wait = new WebDriverWait(appiumDriver, 5);
+wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.id(elementId)));
+
+// Implicit wait
+// default Interval time = 500ms
+appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

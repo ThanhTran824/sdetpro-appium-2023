@@ -1,0 +1,74 @@
+default port: 4723
+emulator for Android
+simulator for iOS
+
+install
+
+* install NodeJS LTS version [using command line: node -v to check version]
+* install Appium server [appium github | appium.io | npmjs.com -> appium to check curent version]
+ - then using command line: npm i appium@currentversion -g (Example: npm i appium@1.22 -g)
+ - using command line: appium -v to check version
+ - Fix Error code 13 on MacOS: sudo chown -R $USER /usr/local
+* Prepare Env for Windows
+ - create folder with default location as: 
+   + Globally: C:\Android\sdk
+   + User: C:\Users\<current-username>\AppData\Local\Android\sdk
+* Prepare Env for MacOS
+ - create folder with default location at:
+   + ~/Library/Android/sdk
+
+* ANDROID_HOME
+ - Windows: Create an System environment variable name ANDROID_HOME with value
+exactly where is Android SDK located
+ - MacOS: ~/.bash_profile
+   export ANDROID_HOME=~/Library/Android/sdk
+ You can change to default bash by using chsh -s /bin/bash
+ Note: User uses zsh need to do one additional step
+         ~/.zshrc
+ On top, put this line:
+ 	   source ~/.bash_profile
+
+* Platform-tools, cmdline-tools, emulator
+ 1. Go to https://developer.android.com/studio#downloads
+ 2. Command Line tools only section > Download
+ 3. Extract the download file (it will be cmdline-tools). Under the extracted folder
+above create a new folder name tools and move /bin and /lib to that new folder. Copy
+the whole folder ti the Android home location
+ 4. Then execute
+	sdkmanager platform-tools emulator
+	sdkmanager "build-tools;29.0.2"
+ 5. Note:
+   + You need to setup PATH form cmdline-tools before executing the command
+   + Quit all terminal/command prompt windows after setting path value then re-open
+to execute command
+ 5. Setup PATH for platform-tools, emulator
+ 6. copy apkanalyzer from sdk\tools\bin to sdk folder
+* Appium-doctor
+ - npm i appium-doctor -g
+ - appium-doctor (check version appium and whether error or not)
+* Create a new Emulator
+ - Download Android Studio (using Emulator in Android Studio)
+ - https://developer.android.com/studio/run/managing-avds (Create and manage virtual device)
+* Android: Enable Debug Developer Mode
+ - On Real Device
+ - On Emulator
+ - "adb devices" command to check number device connect to own device
+* Appium Inspector
+ - appium : auto start appium server
+ - appium -p 4725: 
+
+* capabilities
+ - add "java client" dependency (7.6.0)
+* Launch First script
+- download and install webdriverio native app in github
+- first run appium server 
+***Run Android Studio - open emulator -> execute command to get appPackage and appActivity
+(command: adb install Downloads/Android-NativeDemoApp-0.4.0.apk
+          adb shell dumpsys window | grep -E mCurrentFocus
+	    adb shell "dumpsys activity activities | grep -E mResumedActivity")
+
+*** Maven to manage dependencies
+
+** Install Apache Maven
+- Download
+- Setup Path JAVA_HOME

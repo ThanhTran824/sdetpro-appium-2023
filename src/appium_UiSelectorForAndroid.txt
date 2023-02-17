@@ -1,0 +1,37 @@
+https://developer.android.com/reference/androidx/test/uiautomator/UiSelector
+Android: Elements outside the viewport cannot be interacted with
+
+// Get Mobile window size
+Dimension windowSize = appiumDriver.manage().window().getSize();
+int screenWidth = windowSize.getWidth();
+int screenHeight = windowSize.getHeight();
+
+// Calculate touch point
+int xStartPoint = 50 * screenWidth / 100;
+int xEndPoint = 50 * screenWidth / 100;
+
+int yStartPoint = 50 * screenHeight / 100;
+int yEndPoint = 10 * screenHeight / 100;
+
+// Convert coordinates -> PointOption
+PointOption startPoint = new PointOption<>().withCoordinates(xStartPoint, yStartPoint);
+PointOption endPoint = new PointOption<>().withCoordinates(xEndPoint, yEndPoint);
+
+// Using TouchAction to swipe
+TouchAction touchAction = new TouchAction(appiumDriver);
+touchAction
+	.press(startPoint)
+	.waitAction(new WaitOptions().withDuration(Duration.ofMillis(500)))
+	.moveTo(endPoint)
+	.release()
+	.perform();
+
+* Make sure the desired screen is displayed before perform other actions. 
+
+false negative: app has bug but automation test script doesn't catch
+Ex: There is no warning if a list is empty
+false positive: automation test script failed but the app not bug
+
+// Handling Dropdown using Appium
+https://www.pavantestingtools.com/2019/02/handling-drop-down-using-appium.html
+        
