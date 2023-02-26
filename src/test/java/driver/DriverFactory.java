@@ -24,6 +24,7 @@ public class DriverFactory implements MobileCapabilityTypeEx {
         desiredCapabilities.setCapability(UDID, "emulator-5554");
         desiredCapabilities.setCapability(APP_PACKAGE, "com.wdiodemoapp");
         desiredCapabilities.setCapability(APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
+        desiredCapabilities.setCapability("chromedriverExecutable", "D:\\source\\sdetpro-appium-2023\\src\\main\\resources\\chromedriver.exe");
         URL appiumServer = null;
         // Init appium session
         try {

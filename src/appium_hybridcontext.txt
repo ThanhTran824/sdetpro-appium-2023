@@ -1,0 +1,36 @@
+**********************************HYBRID CONTEXT**********************************
+- hybrid context: when a native app is embedded webview layout in it
+- implement or abstract class cannot use with new keyword, except the user create a override 
+method for implement or abstract class
+- Cannot use Appium Inspector to get selector on web view
++ There are 2 ways:
+	- Open remote debugging webview: chrome://inspect
+	- Open direct web is embedded to mobile
+		Ex: https://webdriver.io/
+Download the chromedriver and point the downloaded path in the code: https://stackoverflow.com/a/66621541
++ Need check false negative case when checking with container as Map, List...
++ Alt + Insert to generate code
++ appium --allow-insecure chromedriver_autodownload to auto get chrome driver properly project
+
+**********************************TAKING SCREENSHOT**********************************
+File base64ScreenshotData = appiumDriver.getScreenshotAs(OutputType.FILE);
+// Get direct location of current project
+String fileLocation = System.getProperty("user.dir");
+
+// Taking whole screen
+File base64ScreenshotData = appiumDriver.getScreenshotAs(OutputType.FILE);
+String fileLocation = System.getProperty("user.dir").concat("/screenshots/").concat("LoginScreen.png");
+FileUtils.copyFile(base64ScreenshotData, new File(fileLocation));
+// Taking an area
+MobileElement loginFormElem = appiumDriver.findElement(MobileBy.AccessibilityId("Login-screen"));
+base64ScreenshotData = loginFormElem.getScreenshotAs(OutputType.FILE);
+fileLocation = System.getProperty("user.dir").concat("/screenshots/").concat("LoginForm.png");
+FileUtils.copyFile(base64ScreenshotData, new File(fileLocation));
+
+
+
+
+Question: How to capture a screenshot if it is hovered or running on background?
+
+
+

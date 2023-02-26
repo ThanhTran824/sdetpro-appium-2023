@@ -1,0 +1,1 @@
+hybrid context: when a native app is embedded webview layout in it
