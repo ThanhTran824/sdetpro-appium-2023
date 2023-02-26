@@ -1,0 +1,4 @@
+// Get platformName
+Capabilities caps = appiumDriver.getCapabilities();
+String platformName = CapabilityHelpers.getCapability(caps, PLATFORM_NAME, String.class);
+System.out.println("[INFO] Testing on: " + platformName);
