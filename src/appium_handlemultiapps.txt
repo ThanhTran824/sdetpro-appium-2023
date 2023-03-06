@@ -2,3 +2,20 @@
 Capabilities caps = appiumDriver.getCapabilities();
 String platformName = CapabilityHelpers.getCapability(caps, PLATFORM_NAME, String.class);
 System.out.println("[INFO] Testing on: " + platformName);
+// Put app into background
++ Within in a certain time
+  appiumDriver.runAppinBackground(Duration)
++ Till we call it back
+  appiumDriver.runAppInBackground(-1)
+  // Switch into another app | Go to Settings toggle WiFi
+
+  // Get App package and App activity
+     adb shell dumpsys window | grep -E mCurrentFocus
+     [Windows] adb shell "dumpsys activity activities | grep -E mResumedActivity"
+
+// Handle swich button on appium
+wifiStatusElem.getAttribute("checked");
+
+// Page Object
+
+	
