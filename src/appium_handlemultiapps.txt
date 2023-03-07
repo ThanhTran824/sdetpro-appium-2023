@@ -16,6 +16,10 @@ System.out.println("[INFO] Testing on: " + platformName);
 // Handle swich button on appium
 wifiStatusElem.getAttribute("checked");
 
-// Page Object
+// Page Object Model
++ Component
+  - Chain Method
+
+https://www.tabnine.com/code/java/methods/io.appium.java_client.TouchAction/moveTo
 
 	
