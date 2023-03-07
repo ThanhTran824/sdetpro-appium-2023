@@ -26,21 +26,11 @@ public class DragAndDropComponent {
             MobileElement startElem = appiumDriver.findElement(MobileBy.AccessibilityId(dragIDElement));
             MobileElement endElem = appiumDriver.findElement(MobileBy.AccessibilityId(dropIDElement));
 
-            int x = startElem.getLocation().x;
-            System.out.println(x);
-            int y = startElem.getLocation().y;
-            System.out.println(y);
-
-            int _x = endElem.getLocation().x;
-            System.out.println(_x);
-            int _y = endElem.getLocation().y;
-            System.out.println(_y);
-
             TouchAction touchAction = new TouchAction(appiumDriver);
             touchAction
-                    .press(PointOption.point(startElem.getLocation().x, startElem.getLocation().y))
+                    .press(PointOption.point(startElem.getCenter().x, startElem.getCenter().y))
                     .waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1)))
-                    .moveTo(PointOption.point(endElem.getLocation().x, endElem.getLocation().y))
+                    .moveTo(PointOption.point(endElem.getCenter().x, endElem.getCenter().y))
                     .release()
                     .perform();
         } catch (Exception e) {
