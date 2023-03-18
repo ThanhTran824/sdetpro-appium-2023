@@ -1,0 +1,46 @@
+Convention:
+- Do not combine multiple screen into 1 flow method
+- 1 screen can have more than one flow methods
+- BaseFlow: goToMethod (navigation)
+
+
+* Apache Commons Validator library in Maven
+// LoginTest class
+{
+	AppiumDriver<MobileElement> appiumDriver = 	DriverFactory.getDriver(Platform.ANDROID);
+	List<LoginCred> loginCreds = new ArrayList<>();
+	loginCreds.add(new LoginCred("teo@", "12345678"));
+	loginCreds.add(new LoginCred("teo@sth.com", "1234567"));
+	loginCreds.add(new LoginCred("teo@sth.com", "12345678"));
+	
+	try{
+		for (LoginCred loginCred : loginCreds) {
+			LoginFlow loginFlow = new LoginFlow(appiumDriver, loginCred.getEmail(), loginCred.getPassword());
+			loginFlow.gotoLoginScreen();
+			loginFlow.login();
+			loginFlow.verifyLogin();
+		}
+	}catch(Exception e){}
+
+	appiumDriver.quit();
+}
+
+public static class LoginCred {
+	private String email;
+	private String password;
+
+	public LoginCred(String email, String password) {
+		this.email = email;
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+}
+
+=============================TESTNG=============================
