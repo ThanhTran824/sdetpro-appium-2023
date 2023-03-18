@@ -55,6 +55,7 @@ public class LoginFlow extends BaseFlow {
             // Close alert
             MobileElement okBtn = appiumDriver.findElement(MobileBy.id("android:id/button1"));
             okBtn.click();
+            System.out.println("Login successfull with credential");
         }
     }
 

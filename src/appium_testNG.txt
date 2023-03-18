@@ -44,3 +44,11 @@ public static class LoginCred {
 }
 
 =============================TESTNG=============================
+TestNG is a test framework support ...
+
+Install TestNG:
+Go to Maven repository -> search TestNG -> choose version -> import to .pom file
+Set @Test before method want to execute without main method
+
+- Create Test Suite
+Go to TestNG home page -> Documentation -> testng.xml -> 
