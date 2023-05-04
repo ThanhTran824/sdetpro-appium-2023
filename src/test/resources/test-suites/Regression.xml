@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression" >
+    <test name="Login" >
+        <classes>
+            <class name="tests.testng.TestNGHooks01" />
+            <class name="tests.testng.TestNGHooks02" />
+        </classes>
+    </test>
+</suite>

@@ -3,6 +3,8 @@ package tests.authen;
 import driver.DriverFactory;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import platform.Platform;
 import test_flows.authen.LoginFlow;
 
@@ -10,7 +12,9 @@ import java.util.*;
 
 public class LoginTest {
 
-    public static void main(String[] args) {
+    //public static void main(String[] args) {
+    @Test
+    public void TestLogin(){
         AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
 
         Map<String, String> credDataMap = new HashMap<>();

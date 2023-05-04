@@ -51,4 +51,40 @@ Go to Maven repository -> search TestNG -> choose version -> import to .pom file
 Set @Test before method want to execute without main method
 
 - Create Test Suite
-Go to TestNG home page -> Documentation -> testng.xml -> 
+Go to TestNG home page -> Documentation -> testng.xml -> copy example -> 
+[Create Resouce folder] -> paste
+
++ TestNG Hooks
++ Default Method Execution sequence and priority
++ Hard Assertion and Soft Assertion
++ Put Assertion methods into test flow
++ Data Driven with Data Provider
++ GSONDataObjectBuilder Class with GSON 
+
+Sequence
+@BeforeSuite
+@BeforeTest
+@BeforeClass
+@BeforeMethod
+@Test
+@AfterMethod
+@AfterClass
+@AfterTest
+@AfterSuite
+
++ testNG method execute with order by alphabet
++ priority, dependsOnMethod attribute (research)
+
+=============================Assertion=============================
+
+* Hard Assertion
+- When method has error in hard assertion, code below it doesn't execute any more
+
+* Soft Assertion
+SoftAssert softAssert = new SoftAssert();
+softAssert.assertEqual(actualResult, expectedResult, message);
+softAssert.assertAll();
+
+=============================Data Driven=============================
++ return a data set can be loop
++ it is called DataProvider in TestNG
