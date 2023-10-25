@@ -1,5 +1,6 @@
 package tests.testng;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
@@ -27,15 +28,24 @@ public class TestNGHooks01 extends BaseTestNG {
 
     @Test
     public void testSth03() {
+        System.out.println("Method 03");
+        String actualResult = "a";
+        String expectedResult = "b";
+
+        // Verifier.verifyEquals(actualResult, expectedResult);
+        // Hard Assertion
+        Assert.assertEquals(actualResult, expectedResult);
+        // Overloading assertEquals()
+        Assert.assertEquals(actualResult, expectedResult, "[ERR] loi roi");
+    }
+    @Test
+    public void testSth04(){
         String actualResult = "a";
         String expectedResult = "b";
 
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(actualResult, expectedResult, "[ERR] error first");
-        softAssert.assertEquals("actualResult", "expectedResult", "[ERR] error second");
-        softAssert.assertTrue(false);
+        softAssert.assertEquals(actualResult, expectedResult, "[ERR] Loi roi");
         softAssert.assertAll();
-
     }
 
     @AfterMethod

@@ -4,6 +4,7 @@ import driver.DriverFactory;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -68,7 +69,7 @@ public class FillingUpLongForm {
             MobileElement cancelButton = appiumDriver.findElement(MobileBy.id("android:id/button2"));
             MobileElement okButton = appiumDriver.findElement(MobileBy.id("android:id/button3"));
 
-            cancelButton.click();
+            //cancelButton.click();
 
 
             Thread.sleep(2000);

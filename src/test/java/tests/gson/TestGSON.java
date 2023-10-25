@@ -5,9 +5,12 @@ import test_data.models.LoginCred;
 
 import tests.authen.LoginTestWithDataProvider;
 
+import java.util.Scanner;
+
 public class TestGSON {
 
     public static void main(String[] args) {
+        
         LoginCred loginCred = new LoginCred("teo@sth.com", "12345678");
 
         // Convert from Object Data to Json
