@@ -3,10 +3,6 @@ package tests.gson;
 import com.google.gson.Gson;
 import test_data.models.LoginCred;
 
-import tests.authen.LoginTestWithDataProvider;
-
-import java.util.Scanner;
-
 public class TestGSON {
 
     public static void main(String[] args) {

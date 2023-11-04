@@ -15,7 +15,7 @@ public class LoginTestWithDataProvider {
 
     @Test(dataProvider = "loginCredData")
     //public void TestLogin() {
-    public void TestLogin(LoginCred loginCred) {
+    public void testLogin(LoginCred loginCred) {
         AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver(Platform.ANDROID);
 
         /*Map<String, String> credDataMap = new HashMap<>();
