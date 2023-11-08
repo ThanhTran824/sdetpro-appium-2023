@@ -1,0 +1,7 @@
+- Get maven dependency for allure-testng
+- Install Scoop (visit scoop.sh site to get more detail)
+- allure --version (check allure version)
+
+command line
+- allure generate
+- allure open
