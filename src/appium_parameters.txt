@@ -1,0 +1,8 @@
+.xml file
+<parameter name="" value="" />
+
+.java file
+@Parameters({"nameParameter"})
+
+execute in test suite.xml
+
